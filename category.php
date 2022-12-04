@@ -160,14 +160,16 @@ while ($row = mysqli_fetch_array($result)) {
                     while ($row = mysqli_fetch_array($result)) {
                         echo '<div class="col-lg-4 col-sm-6">
                                 <div class="single_product_item">
-                                    <img width="200px" src="img/product/'.$row['image'].'" alt="djwij" />
+                                    <img width="200px" src="img/product/'.$row['image'].'"/>
                                     <div class="single_product_text">
                                         <h4>'. $row['title'] .'</h4>
                                         <h3>Rs. '. $row['price'] .'</h3>';
                                         if(!check_if_added_to_cart($row['id'])){
                                            echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>';
+                                           
                                         } else {
                                             echo '<a href="#" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
+                                            
                                         }
                                        
                                   echo ' </div>
